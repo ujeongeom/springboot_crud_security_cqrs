@@ -6,6 +6,8 @@ import com.kt.edu.thirdproject.common.domain.JwtResponse;
 import com.kt.edu.thirdproject.common.service.JwtUserDetailsService;
 import com.kt.edu.thirdproject.common.util.JwtTokenUtil;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,18 +17,20 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
+@RequiredArgsConstructor
 @CrossOrigin(origins ="*")
 public class JwtAuthenticationController {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    //@Autowired
+    private final AuthenticationManager authenticationManager;
 
-    @Autowired
-    private JwtTokenUtil jwtTokenUtil;
+    //@Autowired
+    private final JwtTokenUtil jwtTokenUtil;
 
-    @Autowired
-    private JwtUserDetailsService userDetailsService;
+    //@Autowired
+    private final JwtUserDetailsService userDetailsService;
 
     @PostMapping("/api/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {

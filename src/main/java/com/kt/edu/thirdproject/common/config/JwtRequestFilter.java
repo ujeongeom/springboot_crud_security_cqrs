@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import com.kt.edu.thirdproject.common.service.JwtUserDetailsService;
 import com.kt.edu.thirdproject.common.util.JwtTokenUtil;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,13 +23,14 @@ import io.jsonwebtoken.ExpiredJwtException;
 
 @Component
 @Slf4j
+@RequiredArgsConstructor
 public class JwtRequestFilter extends OncePerRequestFilter {
 
-    @Autowired
-    private JwtUserDetailsService jwtUserDetailsService;
+    //@Autowired
+    private final JwtUserDetailsService jwtUserDetailsService;
 
-    @Autowired
-    private JwtTokenUtil jwtTokenUtil;
+    //@Autowired
+    private final JwtTokenUtil jwtTokenUtil;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
