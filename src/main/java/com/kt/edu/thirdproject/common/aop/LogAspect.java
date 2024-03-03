@@ -30,7 +30,7 @@ public class LogAspect {
 
     // Transactional Annotation 사용하는  method
     @Before("@annotation(org.springframework.transaction.annotation.Transactional)")
-    public void doTrace(JoinPoint joinPoint) {
+    public void doTranaction(JoinPoint joinPoint) {
         log.info("[transaction] {} args = {}", joinPoint.getSignature(), joinPoint.getArgs());
     }
 
