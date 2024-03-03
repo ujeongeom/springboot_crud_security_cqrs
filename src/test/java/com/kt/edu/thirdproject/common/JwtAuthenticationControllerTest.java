@@ -1,4 +1,4 @@
-package com.kt.edu.thirdproject.employee;
+package com.kt.edu.thirdproject.common;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kt.edu.thirdproject.common.controller.JwtAuthenticationController;
