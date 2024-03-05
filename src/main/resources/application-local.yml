@@ -2,7 +2,7 @@
 ### local
 ##############
 server:
-  port: 8080
+  port: 8080 #상무님은 8082
 spring:
   h2:
     # h2 DB
